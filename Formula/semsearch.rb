@@ -1,8 +1,8 @@
 class Semsearch < Formula
   desc "Find files and apps on your Mac by describing them, in any language"
   homepage "https://github.com/kuanlinb/semsearch"
-  url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "9005e28588023561288d8d33a2d6a2bece02f1d4d64a8377bf5d0ad7f15d6d19"
+  url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "5051b9d729891bd7e1f43b48b7b3807255bf57b8a1462595e2d53f6f6dc0dffb"
   license "MIT"
 
   depends_on arch: :arm64
@@ -11,6 +11,10 @@ class Semsearch < Formula
 
   def install
     libexec.install Dir["*"]
+    # Compile the Swift programs here, so the bottle carries them and
+    # semsearch-install needs no Command Line Tools
+    system libexec/"mac/build.sh", libexec/"prebuilt"
+    cp libexec/"VERSION", libexec/"prebuilt"
     # The app runs from opt_libexec, a path that stays the same across upgrades
     python = formula_opt_libexec("python@3.12")/"bin"
     %w[install uninstall].each do |action|
@@ -24,7 +28,7 @@ class Semsearch < Formula
 
   def caveats
     <<~EOS
-      Finish the install (builds the app, downloads the model on first run, starts it at login):
+      Finish the install (sets up the app, downloads the model on first run, starts it at login):
         semsearch-install
       Run it again after `brew upgrade semsearch`.
       To remove SemSearch, run `semsearch-uninstall` before `brew uninstall semsearch`.
@@ -33,6 +37,7 @@ class Semsearch < Formula
 
   test do
     assert_predicate libexec/"install.sh", :executable?
+    assert_predicate libexec/"prebuilt/SemSearch", :executable?
     system formula_opt_libexec("python@3.12")/"bin/python3", "-c",
            "import ast; ast.parse(open('#{libexec}/semsearch/search.py').read())"
   end
