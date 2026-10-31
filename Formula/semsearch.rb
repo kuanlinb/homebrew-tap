@@ -1,8 +1,8 @@
 class Semsearch < Formula
   desc "Find files and apps on your Mac by describing them, in any language"
   homepage "https://github.com/kuanlinb/semsearch"
-  url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "5051b9d729891bd7e1f43b48b7b3807255bf57b8a1462595e2d53f6f6dc0dffb"
+  url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "9be22ad970af553c15e04737b124faca33ba2b5ce6612d06cb28d5600c8a622c"
   license "MIT"
 
   depends_on arch: :arm64
