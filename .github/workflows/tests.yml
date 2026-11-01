@@ -16,8 +16,9 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        # SemSearch is for Apple silicon Macs only: the macos-14 bottle serves macOS 14 and 15
-        os: [ macos-14, macos-26 ]
+        # Apple silicon only. The macos-15 bottle serves macOS 15, the macos-26 bottle macOS 26 and later.
+        # No macOS 14: Homebrew no longer has Python bottles for it, so test-bot skips the formula there.
+        os: [ macos-15, macos-26 ]
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read

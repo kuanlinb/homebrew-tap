@@ -4,6 +4,7 @@ class Semsearch < Formula
   url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "9be22ad970af553c15e04737b124faca33ba2b5ce6612d06cb28d5600c8a622c"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/kuanlinb/homebrew-tap/releases/download/semsearch-0.1.3"
