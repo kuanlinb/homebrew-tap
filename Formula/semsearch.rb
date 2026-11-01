@@ -7,8 +7,9 @@ class Semsearch < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/kuanlinb/homebrew-tap/releases/download/semsearch-0.1.3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "d44bb2f47bf67b90c338da22647c17207e361ae61638490b15d553b32ce4c4b4"
+    root_url "https://github.com/kuanlinb/homebrew-tap/releases/download/semsearch-0.1.3_1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "06c03f19d88d213f1d9d9a31ad7ef57cad35dccd91ed832381b4085ae824c942"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e33643d0924df682750177ab8440c370aa04393f872bdfa80cf005b95899e23"
   end
 
   depends_on arch: :arm64
