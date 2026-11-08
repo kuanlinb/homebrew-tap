@@ -5,6 +5,12 @@ class Semsearch < Formula
   sha256 "c9de845b86f833a405e4f1fed774a5d2daf44ed8104c46cc024cdaab95a63d73"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/kuanlinb/homebrew-tap/releases/download/semsearch-0.1.4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "beac3caf8cc66f65967b1e9d4ab230cfbcdb2278db3eaf283ffacb73518bdb2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47e9e09fb2579e38dc249a6c08268ad261891f84ace6729940f3e1d48362d9bc"
+  end
+
   depends_on arch: :arm64
   depends_on macos: :ventura
   depends_on "python@3.12"
