@@ -1,15 +1,9 @@
 class Semsearch < Formula
   desc "Find files and apps on your Mac by describing them, in any language"
   homepage "https://github.com/kuanlinb/semsearch"
-  url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "c9de845b86f833a405e4f1fed774a5d2daf44ed8104c46cc024cdaab95a63d73"
+  url "https://github.com/kuanlinb/semsearch/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "f93e5015b3e67c42fbcdd769532a406d02a41c98f0d3440f5dbd0d14aaa07d45"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/kuanlinb/homebrew-tap/releases/download/semsearch-0.1.4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "beac3caf8cc66f65967b1e9d4ab230cfbcdb2278db3eaf283ffacb73518bdb2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47e9e09fb2579e38dc249a6c08268ad261891f84ace6729940f3e1d48362d9bc"
-  end
 
   depends_on arch: :arm64
   depends_on macos: :ventura
